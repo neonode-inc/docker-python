@@ -1,8 +1,6 @@
-FROM ubuntu:focal
+FROM neonodeab/jenkins-agent:latest
 
-RUN apt update
-RUN apt install -y default-jre-headless
-RUN apt install -y python3-pip
-RUN apt install -y python3-venv
-RUN apt install -y build-essential
-RUN apt install -y openssh-server
+RUN apt-get update
+RUN apt-get install python3-pip
+RUN apt-get install python3-venv
+RUN apt-get install build-essential
