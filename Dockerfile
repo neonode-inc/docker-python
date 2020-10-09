@@ -1,10 +1,12 @@
-FROM neonodeab/jenkins-agent:latest
+FROM neonodeab/jenkins-agent:1.0.0
 
 USER root
 
-RUN apt-get update
-RUN apt-get install python3-pip
-RUN apt-get install python3-venv
-RUN apt-get install build-essential
+RUN apt-get update \
+ && apt-get -y install \
+      python3-pip \
+      python3-venv \
+      build-essential \
+ && rm -rf /var/lib/apt/lists/*
 
 USER ${user}
